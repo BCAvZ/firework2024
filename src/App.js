@@ -1,24 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { Fireworks } from '@fireworks-js/react'
+import year from './2024.jpg'
 function App() {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className={"container"}>
+     <div className="imageWrapper">
+        <img src={year} alt="2024"/>
+     </div>
+      <Fireworks className={"fireworks"}
+
+          options={{
+                    opacity: 0.5,
+                    explosion: 10,
+                    mouse: {
+                        click: true,
+                        max:2,
+                    },
+                    hue: {
+                        min: 0,
+                        max: 360
+                    },
+                    sound: {
+                        enabled:true
+                    }
+          }}
+      />
+    </section>
   );
 }
 
